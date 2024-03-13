@@ -85,7 +85,7 @@ In math, PEMDAS is an acronym that helps students remember the order of operatio
 
 - **.NET Runtime**,  hosts and manages your code as it executes on the end user's computer. 
   
-- **.NET Class Library**, a prewritten collection of coding resources that you can use in your applications. T
+- **.NET Class Library**, a prewritten collection of coding resources that you can use in your applications.
 
 # System Namespace
 Contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.
@@ -154,3 +154,13 @@ using System;
 ```
 Here the `using` statement enables you to write code that implements members of the` System` namespace without requiring you to specify System. For example, your code can use the `Console.WriteLine()` method without having to specify `System.Console.WriteLine()`. Among other things, the `using` statement makes your code easier to read.
 
+
+# String Methods
+| Method         | Description                                                    |
+| -------------- | -------------------------------------------------------------- |
+| `ToUpper()`    | Converts a string to uppercase.                                |
+| `ToLower()`    | Converts a string to lowercase.                                |
+| `Trim()`       | Removes leading and trailing white space.                      |
+| Contains()     | Returns true if a specified string is found within the string. |
+| `StartsWith()` | Returns true if the string starts with a specified string.     |
+| `EndsWith()`   | Returns true if the string ends with a specified string.       |
