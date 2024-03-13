@@ -1,4 +1,6 @@
 # Cheet Sheets
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This repository contains the cheat sheets for various programming languages and tools.
 
 > [!NOTE]
