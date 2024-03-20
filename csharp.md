@@ -164,3 +164,62 @@ Here the `using` statement enables you to write code that implements members of 
 | Contains()     | Returns true if a specified string is found within the string. |
 | `StartsWith()` | Returns true if the string starts with a specified string.     |
 | `EndsWith()`   | Returns true if the string ends with a specified string.       |
+
+
+
+# Nullable Types
+A nullable value type `T?` represents all values of its underlying value type `T` and an additional null value. For example, you can assign any of the following three values to a `bool?` variable: `true`, `false`, or `null`. An underlying value type `T` cannot be a nullable value type itself.
+
+The following code shows how to declare a nullable type:
+
+```csharp
+int? num = null;
+
+```
+
+
+> [!NOTE]
+> If you want to use `Console.ReadLine()` input for numeric values, you need to convert the string value to a numeric type.
+> The `int.TryParse()` method can be used to convert a string value to an integer. The method uses two parameters, a string that will be evaluated and the name of an integer variable that will be assigned a value. The method returns a Boolean value. The following code sample demonstrates using the `int.TryParse()` method:
+
+
+```csharp
+// capture user input in a string variable named readResult
+int numericValue = 0;
+bool validNumber = false;
+
+validNumber = int.TryParse(readResult, out numericValue);
+```
+> If the string value assigned to `readResult` represents a valid integer, the value will be assigned to the integer variable named `numericValue`, and `true` will be assigned to the Boolean variable named `validNumber`. If the value assigned to `readResult` doesn't represent a valid integer, `validNumber` will be assigned a value of `false`. For example, if `readResult` is equal to "7", the value `7` will be assigned to `numericValue`.
+
+
+# Jagged Arrays vs Multidimensional Arrays
+In a multidimensional array, each element in each dimension has the same, fixed size as the other elements in that dimension. In a jagged array, which is an array of arrays, each inner array can be of a different size.
+In addittion, each element contained within the array is a separate item of the array type.
+
+**Example:**
+```csharp
+public class ArrayHolder
+{
+    int[][] jaggedArray = { new int[] {1,2,3,4},
+                            new int[] {5,6,7},
+                            new int[] {8},
+                            new int[] {9}
+                          };
+
+    int[,] multiDimArray = {{1,2,3,4},
+                             {5,6,7,0},
+                             {8,0,0,0},
+                             {9,0,0,0}
+                            };
+}
+```
+**Example:**
+```csharp
+//multidimensional array
+string [,] twoDimensionalArray = new string[3,3];
+```
+> [!NOTE]
+> In a multidimentional array the `foreach` statement wouldn't process the two array dimensions separately. 
+> For in a n x m array, the `foreach` statement would process the n x m elements in a single dimension. 
+> However, if the array was a jagged array configured as an array of arrays In this case, you would create a `foreach` for an outer loop and second `foreach` for an inner loop. The outer loop would iterate through the array elements in the jagged array. 

@@ -1,4 +1,5 @@
 # Docker Cheatsheet
+Docker is a platform that enables you to combine an app plus its configuration and dependencies into a single, independently deployable unit called a container.
 ## Images
 - An image is a read-only template with instructions for creating a Docker container. 
 - Often, an image is based on another image, with some additional customization.
@@ -88,3 +89,15 @@ Now, you can take advantage of the container’s environment while you develop t
 When working with containers, you usually need to create a Dockerfile to define your image and a compose.yaml file to define how to run it.
 
 To help you create these files, Docker has a command called `docker init`. 
+
+
+## Dockerfile
+
+| Command                 | Description                                                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `FROM`                 | The base image for the new image.                                                                                          |
+| `COPY`                 | Copies files from the host system to the image.                                                                            |
+| `WORKDIR`              | Sets the working directory for the rest of the Dockerfile.                                                                 |
+| `RUN`                  | Runs a command in the image.                                                                                               |
+| `CMD`                  | The default command to run when starting a container from this image.                                                                           |
+
