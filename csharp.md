@@ -90,13 +90,14 @@ In math, PEMDAS is an acronym that helps students remember the order of operatio
 # System Namespace
 Contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.
 
-### Console Class
+### Console Class Methods
 
 | Methods       | Description                                          |
 | ------------- | ---------------------------------------------------- |
 | `Write()`     |                                                      |
 | `WriteLine()` |                                                      |
 | `ReadLine()`  | Used to collect user input in a console application. |
+| `Clear()`     | Clears the console window.                           |
 
 
 # Literal Values
@@ -223,3 +224,10 @@ string [,] twoDimensionalArray = new string[3,3];
 > In a multidimentional array the `foreach` statement wouldn't process the two array dimensions separately. 
 > For in a n x m array, the `foreach` statement would process the n x m elements in a single dimension. 
 > However, if the array was a jagged array configured as an array of arrays In this case, you would create a `foreach` for an outer loop and second `foreach` for an inner loop. The outer loop would iterate through the array elements in the jagged array. 
+
+
+## int32 Methods
+Used like: `int.MethodName();`
+| Method                                | Description                                                                                            |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `TryParse(string? s, out int result)` | Converts the string `s` to to an integer `result` if possible and returns `true`, else returns `false` |
