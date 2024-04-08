@@ -10,4 +10,8 @@ Each file is named after the language or tool it is about.
 Currently, the following cheat sheets are available:
 - [C#](csharp.md)
 - [Docker](docker.md)
+- [.NET](dotnet.md)
+- [Excel](excel.md)
+- [Linux Commands](linux.md)
+- [React Native](react-native.md)
 - [Markdown](markdown.md)

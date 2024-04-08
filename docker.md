@@ -93,11 +93,11 @@ To help you create these files, Docker has a command called `docker init`.
 
 ## Dockerfile
 
-| Command                 | Description                                                                                                               |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `FROM`                 | The base image for the new image.                                                                                          |
-| `COPY`                 | Copies files from the host system to the image.                                                                            |
-| `WORKDIR`              | Sets the working directory for the rest of the Dockerfile.                                                                 |
-| `RUN`                  | Runs a command in the image.                                                                                               |
-| `CMD`                  | The default command to run when starting a container from this image.                                                                           |
+| Command   | Description                                                           |
+| --------- | --------------------------------------------------------------------- |
+| `FROM`    | The base image for the new image.                                     |
+| `COPY`    | Copies files from the host system to the image.                       |
+| `WORKDIR` | Sets the working directory for the rest of the Dockerfile.            |
+| `RUN`     | Runs a command in the image.                                          |
+| `CMD`     | The default command to run when starting a container from this image. |
 
