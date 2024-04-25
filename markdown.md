@@ -1,6 +1,11 @@
-[Markdown Syntax](https://daringfireball.net/projects/markdown/syntax)
+# Markdown Cheatsheet
 
-# Alerts
+### ⭐ Further Reading
+- [Markdown Syntax](https://daringfireball.net/projects/markdown/syntax)
+- [Working with advanced formatting](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting)
+- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+
+## Alerts
 ```markdown
 > [!NOTE]
 > Useful information that users should know, even when skimming content.

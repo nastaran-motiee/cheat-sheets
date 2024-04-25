@@ -101,3 +101,19 @@ To help you create these files, Docker has a command called `docker init`.
 | `RUN`     | Runs a command in the image.                                          |
 | `CMD`     | The default command to run when starting a container from this image. |
 
+
+# Dev Containers
+Development containers are a **VS Code** feature that allows developers to package a local development tool stack into the internals of a Docker container while also bringing the VS Code UI experience with them.
+All developers on the team are expected to share and use the dev container definition (.devcontainer directory) in order to spin-up a container. This definition provides consistent tooling for locally developing an application across a team.
+
+The `.devcontainer` folder contains the following files:
+- `Dockerfile` - Contains the instructions to build the container (What should be installed in the container).
+- `devcontainer.json` - Contains the configuration for the container (Describes how VScode should start the container, and what to do afterwards).
+
+```
+$ tree vs-code-remote-try-python  # main repo directory
+└───.devcontainers
+        ├───Dockerfile
+        ├───devcontainer.json
+```
+
