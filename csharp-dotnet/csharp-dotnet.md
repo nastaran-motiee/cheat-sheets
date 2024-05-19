@@ -92,13 +92,63 @@ In math, PEMDAS is an acronym that helps students remember the order of operatio
 
 - **Scope Creep** - Some developers refer to the addition of requirements during development as ___"scope creep"___. Even if combining the new required features does not require much work, it still adds time and complexity. For this reason, you should let the team know that added requirements will likely delay the completion of the project.
 -  We can use paretheses to create multiple conditions using conditional (ternary) operator. **For Example:** `stringfortune = (luck > 75 ? good : (luck < 25 ? bad : neutral));`
+
+#
+<h4 style="color:#E62E29">Creating and using Methods in C#</h4>
+
 - **In C#, a method can be called before or after its definition.** It's common to define all methods at the end of a program. When you call a method, the code in the method body will be executed. This means execution control is passed from the method caller to the method. Control is returned to the caller after the method completes its execution. Method names should be Pascal case and generally shouldn't start with digits. 
 - **Falsy value** is any value that, if cast to bool, becomes false.
+- Variables can be categorized as value types and reference types.
+- Value types directly contain values, and reference types store the address of the value.
+- Methods using value type arguments create their own copy of the values.
+- Methods that perform changes on an array parameter affect the original input array.
+- String is an immutable reference type.
+- Methods that perform changes on a string parameter don't affect the original string.
+-  **Scope** is a term that's talking about variable lifetime,and how long these variables actually exist.
+-  **The C Sharp language allows the use of named and optional parameters**. These types of parameters let you select which arguments you want to supply to the method, so you aren't restricted to the structure defined in the method signature.
+- **Named arguments** allow you to specify the value for a parameter using its name rather than position. 
+- **Optional parameters** allow you to omit those arguments when calling the method.
+-  It isn't necessary to name all of the arguments. For example, the following syntax is also valid: <br/> `RSVP("Linh", 2, allergies: "none", inviteOnly: false);` <br/>`RSVP("Linh", partySize: 2, "none", false);`
+- Named arguments are also valid as long as they're not followed by any positional arguments. For example, including "Linh" and 2 at the end would be invalid:<br/> <br/>
+`RSVP(allergies: "none", inviteOnly: false, "Linh", 2);`<br/><br/>  Notice that the named arguments don't have to appear in the original order. However, the unnamed argument Tony is a positional argument, and must appear in the matching position.
+- A parameter becomes optional when it's assigned a default value. If an optional parameter is omitted from the arguments, the default value is used when the method executes. <br/> For Example: <br/> `void RSVP(string name, int partySize = 1, string allergies = "none", bool inviteOnly = true);`
+
+#
+<h4 style="color:#E62E29">Casting in C#</h4>
+ Implicit casting is only available when there's no data loss occurring as a result of the conversion.
+
+ **For Example:**
+ If you omit the cast from the return result of the following method , you'll see the following error:
+
+_Cannot implicitly convert type 'double' to 'int'._
+
+ ```csharp
+ int UsdToVnd(double usd) 
+{
+    int rate = 23500;
+    return (int) (rate * usd);
+}
+```
+
+This happens because the compiler attempts to cast the value returned to match the data type specified in the method signature. However, implicit casting is only available when there's no data loss occurring as a result of the conversion. 
+
+But in the following example:
+```csharp
+doubleVndToUsd(int vnd) 
+{
+    double rate = 23500;
+    return vnd / rate;
+}
+```
+you need rate to be a double or else the compiler uses integer division and return a truncated int value. USD needs to be represented by a decimal number.
+
+If you set rate to an int instead of double, you'll notice that the compiler doesn't present you with any errors. This happens because the value of `vnd / rate` is implicitly casted to the double data type specified in the method signature. 
+When creating methods that return numeric values, it's important to consider the data types in the operations your method performs.
 
 
 ## .NET Commands
 
-```bash
+```
 dotnet new webapi -o MyMicroservice --no-https
 cd MyMicroservice
 ```
@@ -336,13 +386,13 @@ Simple value types include many of the data types that you may have used already
 - Simple value types use a keyword alias to represent formal names of types in the .NET Library.
 
 ## Array Class Methods
-| Method      | Description                                                                                                                                                                                                                                                      | Explenation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Sort()`    | Sorts the array elements alphanumerically.                                                                                                                                                                                                                       |
-| `Reverse()` | Reverses the order of the array elements.                                                                                                                                                                                                                        |
-| `Clear()`   | To remove the contents of specific elements in your array and replace it with the array default value. For example, in a string array the element value cleared is replaced with null, when you clear a int array element the replacement is done with 0 (zero). | **For Example:** `Array.Clear(pallets, 0, 2);` clears the values stored in the elements of the pallets array starting at index 0 and clearing 2 elements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `Resize()`  | Adds or removes elements from your array.                                                                                                                                                                                                                        | **For Example:** `Array.Resize(ref pallets, 6);` <br/> Here, we're calling the `Resize()` method passing in the pallets array by reference, using the `ref` keyword. In some cases, methods require you pass arguments by value (the default) or by reference (using the ref keyword). The reasons why this is necessary requires a long and complicated explanation about of how objects are managed in .NET. When resizing the array to add more elements The new elements are added at the end of the current elements. The new elements will be null until you assign a value to them.When resizing the array to remove elements, the elements will be removed from the end of the array. |
-
+| Method        | Description                                                                                                                                                                                                                                                      | Explenation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Clear()`     | To remove the contents of specific elements in your array and replace it with the array default value. For example, in a string array the element value cleared is replaced with null, when you clear a int array element the replacement is done with 0 (zero). | **For Example:** `Array.Clear(pallets, 0, 2);` clears the values stored in the elements of the pallets array starting at index 0 and clearing 2 elements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `GetLength()` | Returns the number of elements in the specified dimension of the array.                                                                                                                                                                                          | **For Example:** `int length = pallets.GetLength(0);` <br/> Here, we're calling the `GetLength()` method on the pallets array to get the number of elements in the first dimension of the array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `Reverse()`   | Reverses the order of the array elements.                                                                                                                                                                                                                        |
+| `Resize()`    | Adds or removes elements from your array.                                                                                                                                                                                                                        | **For Example:** `Array.Resize(ref pallets, 6);` <br/> Here, we're calling the `Resize()` method passing in the pallets array by reference, using the `ref` keyword. In some cases, methods require you pass arguments by value (the default) or by reference (using the ref keyword). The reasons why this is necessary requires a long and complicated explanation about of how objects are managed in .NET. When resizing the array to add more elements The new elements are added at the end of the current elements. The new elements will be null until you assign a value to them.When resizing the array to remove elements, the elements will be removed from the end of the array. |
+| `Sort()`      | Sorts the array elements alphanumerically.                                                                                                                                                                                                                       |
 
 ## String data type's Array methods
 
@@ -414,3 +464,45 @@ If you're viewing this from the en-US culture, you observe the following output.
 ```bash
 You saved $7.56 off the regular $67.55 price. 
 ```
+
+
+## Debugging Tools for C#
+
+### Debugger and application interaction - Behind the scenes
+A code debugger can be used to pause and resume code execution, examine variable state, and even change the values assigned to variables at runtime. You may be wondering, how can the debugger control and modify a running application? The short answer is, the debugger has access to the application's runtime environment and executable code.
+
+The Visual Studio Code debugger for C# uses the .NET Core runtime to launch and interact with an application. When you start the debugger, it creates a new instance of the runtime and runs the application within that instance. The runtime includes an application programming interface (API), which the debugger uses to attach to the running process (your application).
+Once your application is running and the debugger is attached, the debugger communicates with the running process using the .NET Core runtime's debugging APIs and a standard debug protocol. The debugger can interact with the process (the application running within the .NET runtime instance) by setting breakpoints, stepping through code, and inspecting variables. Visual Studio Code's debugger interface enables you to navigate the source code, view call stacks, and evaluate expressions.
+
+### Debuging C# application in Visual Studio Code
+Visual Studio Code uses a launch configuration file to specify the application that runs in the debug environment.
+
+1. If the your project folder doesn't include a` ProjectName.sln` file, select `Program.cs`, and then verify that a `.sln` file is created.
+Opening a C# code file prompts the environment to check for project files. The `.sln` file is a solution file that is used by Visual Studio to manage projects and is usually created automatically when you create a new project in Visual Studio Code. The `.sln` file is used by the debugger to identify the project that should be run in the debug environment.
+2. On the View menu, select Command Palette.
+
+3. At the command prompt, enter **.net: g** and then select **.NET: Generate Assets for Build and Debug**.
+
+4. Notice the new `.vscode` folder that has been added to your project folder.The .vscode folder contains files that are used to configure the debug environment.
+If you expand the `.vscode` folder, you'll see a `launch.json` file, and a `tasks.json` file.
+   - The `launch.json` file, contains the launch configurations for your project.<br/>The launch configurations file can include multiple configurations. Each configuration includes a collection of attributes that are used to define that configuration. 
+   - The `tasks.json` file, contains the build task for your project
+
+
+### Conditional breakpoints
+A conditional breakpoint is a special type of breakpoint that only triggers when a specified condition is met. For example, you can create a conditional breakpoint that pauses execution when a variable named numItems is greater than 5.
+
+### Hit Count breakpoints and Logpoints
+- A **hit count** breakpoint can be used to specify the number of times that a breakpoint must be encountered before it will "break" execution. You can specify a hit count value when creating a new breakpoint (with the Add Conditional Breakpoint action) or when modifying an existing one (with the Edit Condition action). In both cases, an inline text box with a dropdown menu opens where you can enter the hit count value.
+- A **Logpoint** is a variant of a breakpoint that does not "break" into the debugger but instead logs a message to the console. Logpoints are especially useful for injecting logging while debugging production environments that cannot be paused or stopped. A Logpoint is represented by a "diamond" shaped icon rather than a filled circle. Log messages are plain text but can include expressions to be evaluated within curly braces ('{}').<br/>
+Logpoints can include a conditional 'expression' and/or 'hit count' to further control when logging messages are generated. For example, you can combine a Logpoint message of `i = {i}` with Hit Count condition `>4` to generate log messagesA 'hit count' breakpoint can be used to specify the number of times that a breakpoint must be encountered before it will 'break' execution. You can specify a hit count value when creating a new breakpoint (with the Add Conditional Breakpoint action) or when modifying an existing one (with the Edit Condition action). In both cases, an inline text box with a dropdown menu opens where you can enter the hit count value.
+
+### Debugging tips
+- Use breakpoints to pause code execution during a debug session.
+- Use **Step Into** from the Debug controls toolbar to observe the next executable code line.
+- Use **Step Out** from the Debug controls toolbar to advance through the current method and back to the code line that called the method.
+
+
+
+### The launch.json file
+- [Examine the launch configuration file](./examine-the-launch-configuration-file.pdf)
