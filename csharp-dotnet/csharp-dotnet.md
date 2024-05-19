@@ -505,4 +505,4 @@ Logpoints can include a conditional 'expression' and/or 'hit count' to further c
 
 
 ### The launch.json file
-- [Examine the launch configuration file](./ExamineTheLaunchConfigurationsFileTrainingMicrosoftLearn.mhtml)
+- [Examine the launch configuration file](https://learn.microsoft.com/en-us/training/modules/implement-visual-studio-code-debugging-tools/6-examine-launch-configurations)
