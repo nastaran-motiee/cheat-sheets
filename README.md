@@ -1,17 +1,9 @@
-# Cheet Sheets
+# Cheat Sheets
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the cheat sheets for various programming languages and tools.
+The main purpose of this repository is to provide a collection of cheat sheets for different technologies and tools.
 
-> [!NOTE]
-Each file is named after the language or tool it is about.
+> [!IMPORTANT]
+> Notice that this repository contains only a wiki. <br/>
+>To access the cheat sheets, visit the [wiki](cheat-sheets.wiki) section of this repository.
 
-## Available Cheat Sheets
-Currently, the following cheat sheets are available:
-- [C#](csharp.md)
-- [Docker](docker.md)
-- [.NET](dotnet.md)
-- [Excel](excel.md)
-- [Linux Commands](linux.md)
-- [React Native](react-native.md)
-- [Markdown](markdown.md)
