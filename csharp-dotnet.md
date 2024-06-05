@@ -113,6 +113,12 @@ In math, PEMDAS is an acronym that helps students remember the order of operatio
 `RSVP(allergies: "none", inviteOnly: false, "Linh", 2);`<br/><br/>  Notice that the named arguments don't have to appear in the original order. However, the unnamed argument Tony is a positional argument, and must appear in the matching position.
 - A parameter becomes optional when it's assigned a default value. If an optional parameter is omitted from the arguments, the default value is used when the method executes. <br/> For Example: <br/> `void RSVP(string name, int partySize = 1, string allergies = "none", bool inviteOnly = true);`
 
+
+>[!NOTE]
+>The top-level statements section of a console application is considered its own method. A method named Main.
+
+
+
 #
 <h4 style="color:#E62E29">Casting in C#</h4>
  Implicit casting is only available when there's no data loss occurring as a result of the conversion.
