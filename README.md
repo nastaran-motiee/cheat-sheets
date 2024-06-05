@@ -5,5 +5,5 @@ The main purpose of this repository is to provide a collection of cheat sheets f
 
 > [!IMPORTANT]
 > Notice that this repository contains only a wiki. <br/>
->To access the cheat sheets, visit the [wiki](cheat-sheets.wiki) section of this repository.
+>To access the cheat sheets, visit the [wiki](./wiki) section of this repository.
 
