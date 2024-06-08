@@ -5,5 +5,5 @@ The main purpose of this repository is to provide a collection of cheat sheets f
 
 > [!IMPORTANT]
 > Notice that this repository contains only a wiki. <br/>
->To access the cheat sheets, visit the [**📖 Wiki**](https://github.com/nastaran-motiee/cheat-sheets/wiki) section of this repository.
+>To access the cheat sheets, visit the [**Wiki**](https://github.com/nastaran-motiee/cheat-sheets/wiki) section of this repository.
 
